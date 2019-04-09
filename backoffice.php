@@ -76,8 +76,8 @@
       </article>
       <p class="bouton">
 	        <input id="nouvelarticle" type="submit" name="nouvelarticle" value="Créer un article">
+			<input id="lienpagemessage" class="retour" type="button" value="Lien vers la page message" onclick="self.location.href='message.php'">
 	  </p>
-	  <a href="message.php">Lien vers la page message</a>
 	  </form>
     </div>
 		<footer>
