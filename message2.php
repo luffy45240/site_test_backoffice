@@ -36,7 +36,7 @@
       </nav>
       <article>
 		<?php include("inc/connexion.inc.php");
-          $date = date("Y-m-d H:i:s");		
+          $date = date("Y-m-d");		
 	      if(isset($_GET["modifier"])){
 		    $requete = 'update content set titre ="'.$_GET ['titre'].'", categoriearticle ="'.$_GET ['categoriearticle'].'", contenuarticle ="'.$_GET ['contenuarticle'].'", datemodificationarticle="'.$date.'", nomusermodificationarticle="'.$_SESSION['login'].'" where idarticle ="'.$_GET ['idarticle'].'"';
 		    $con->exec($requete);
@@ -45,7 +45,7 @@
 		    $requete = 'delete from content where idarticle ="'.$_GET ['idarticle'].'"';
 		    $con->exec($requete);
 		    echo "La suppression a bien été prise en compte";};
-			?>
+	    ?>
 			
 		<?php
 		if(isset($_GET["ajouter"])){

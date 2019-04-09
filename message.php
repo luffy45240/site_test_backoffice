@@ -77,17 +77,17 @@
         <p class="message">
           Date envoi :  
           <?php
-		  $date = date("Y-m-d H:i");	
-		  echo $date;
+		  $dateEnvoi = $_GET['dateEnvoi'];
+          echo $dateEnvoi
 		  ?>
 		</p>
+		<input class="retour" type="button" value="&larr; Retour" onclick="self.location.href='contact.html'">
 		<?php
 			$nomPrenom = $_GET ['nomPrenom'];
 			$numPortable = $_GET ['numPortable'];
 			$message = $_GET ['message'];
 			$adresseMail = $_GET ['adresseMail'];
-			$dateEnvoi = $_GET ['dateEnvoi'];
-		    $requete = 'insert into message (usermessage, telephone, message, email, datereceptionmessage) values ("'.$nomPrenom.'", "'.$numPortable.'", "'.$message.'", "'.$adresseMail.'", "'.$date.'" )';
+		    $requete = 'insert into message (usermessage, telephone, message, email, datereceptionmessage) values ("'.$nomPrenom.'", "'.$numPortable.'", "'.$message.'", "'.$adresseMail.'", "'.$dateEnvoi.'" )';
 		    $con->exec($requete);
 			};
 		?>
@@ -119,10 +119,16 @@
               echo "<td>".$nbutilisateurs['datereceptionmessage']."</a>";
 		      echo "</tr>\n";
 		                                      }
-		  echo "</table>\n";			}
-		  ?>
+		      echo "</table>\n";		?>
+			  <p class="bouton">
+		        <input class="retour" type="button" value="télécharger les messages sous le format csv" onclick="self.location.href='test.php'">	
+                <input class="retour" type="button" value="Retour au backoffice" onclick="self.location.href='backoffice.php'">	
+              </p>				
+		      <?php }
+		      ?>
 		  
-        <input class="retour" type="button" value="&larr; Retour" onclick="self.location.href='contact.html'">
+              
+
       </article>
     </div>
 		<footer>
